@@ -71,6 +71,7 @@ const config: HardhatUserConfig = {
         blockNumber: FORK_BLOCK,
       },
       chainId: chainIds.hardhat,
+      allowUnlimitedContractSize: true
     },
     mainnet: createTestnetConfig("mainnet"),
     goerli: createTestnetConfig("goerli"),

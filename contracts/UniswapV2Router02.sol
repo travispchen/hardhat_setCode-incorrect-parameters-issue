@@ -2,6 +2,8 @@
  *Submitted for verification at Etherscan.io on 2020-06-05
 */
 
+import "hardhat/console.sol";
+
 pragma solidity =0.6.6;
 
 interface IUniswapV2Factory {
@@ -242,6 +244,8 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
     constructor(address _factory, address _WETH) public {
         factory = _factory;
         WETH = _WETH;
+
+        console.log("constructor _factory: ", _factory);
     }
 
     receive() external payable {
@@ -704,6 +708,7 @@ library UniswapV2Library {
     // fetches and sorts the reserves for a pair
     function getReserves(address factory, address tokenA, address tokenB) internal view returns (uint reserveA, uint reserveB) {
         (address token0,) = sortTokens(tokenA, tokenB);
+        console.log("getReserves factory: ", factory);
         (uint reserve0, uint reserve1,) = IUniswapV2Pair(pairFor(factory, tokenA, tokenB)).getReserves();
         (reserveA, reserveB) = tokenA == token0 ? (reserve0, reserve1) : (reserve1, reserve0);
     }
