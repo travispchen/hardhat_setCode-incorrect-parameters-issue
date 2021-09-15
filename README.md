@@ -1,3 +1,11 @@
+# To replicate bug
+
+```sh
+$ yarn install
+$ cp .env.example .env # change the FORK_URL to a valid Alchemy URL
+$ yarn test test/uniswap-example.test.ts
+```
+
 # Solidity Template
 
 Uses
@@ -57,4 +65,4 @@ npx hardhat verify --network <network> <DEPLOYED_CONTRACT_ADDRESS> "Constructor 
 
 ## Thanks
 
-If you like it than you soulda put a start ⭐ on it 
+If you like it than you soulda put a start ⭐ on it

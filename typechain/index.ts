@@ -4,9 +4,23 @@
 export type { AccessControl } from "./AccessControl";
 export type { ERC20 } from "./ERC20";
 export type { IERC20 } from "./IERC20";
+export type { IUniswapV2Router01 } from "./IUniswapV2Router01";
+export type { IUniswapV2Router02 } from "./IUniswapV2Router02";
 export type { TestToken } from "./TestToken";
+export type { UniswapRouterTest } from "./UniswapRouterTest";
+export type { IUniswapV2Factory } from "./IUniswapV2Factory";
+export type { IUniswapV2Pair } from "./IUniswapV2Pair";
+export type { IWETH } from "./IWETH";
+export type { UniswapV2Router02 } from "./UniswapV2Router02";
 
 export { AccessControl__factory } from "./factories/AccessControl__factory";
 export { ERC20__factory } from "./factories/ERC20__factory";
 export { IERC20__factory } from "./factories/IERC20__factory";
+export { IUniswapV2Router01__factory } from "./factories/IUniswapV2Router01__factory";
+export { IUniswapV2Router02__factory } from "./factories/IUniswapV2Router02__factory";
 export { TestToken__factory } from "./factories/TestToken__factory";
+export { UniswapRouterTest__factory } from "./factories/UniswapRouterTest__factory";
+export { IUniswapV2Factory__factory } from "./factories/IUniswapV2Factory__factory";
+export { IUniswapV2Pair__factory } from "./factories/IUniswapV2Pair__factory";
+export { IWETH__factory } from "./factories/IWETH__factory";
+export { UniswapV2Router02__factory } from "./factories/UniswapV2Router02__factory";

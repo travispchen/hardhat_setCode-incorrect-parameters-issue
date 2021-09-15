@@ -1,19 +1,19 @@
-import { task } from "hardhat/config";
+import "@nomiclabs/hardhat-ethers";
+import "@nomiclabs/hardhat-etherscan";
+import "@nomiclabs/hardhat-waffle";
+import "@typechain/hardhat";
+import "hardhat-gas-reporter";
+
+import { HardhatUserConfig, NetworkUserConfig } from "hardhat/types";
 
 import { config as dotenvConfig } from "dotenv";
 import { resolve } from "path";
+import { task } from "hardhat/config";
+
 dotenvConfig({ path: resolve(__dirname, "./.env") });
 
-import { HardhatUserConfig } from "hardhat/types";
-import { NetworkUserConfig } from "hardhat/types";
 
-import "@nomiclabs/hardhat-waffle";
-import "@typechain/hardhat";
-import "@nomiclabs/hardhat-ethers";
-import "@nomiclabs/hardhat-waffle";
 
-import "hardhat-gas-reporter";
-import "@nomiclabs/hardhat-etherscan";
 
 const chainIds = {
   ganache: 1337,
@@ -29,6 +29,8 @@ const MNEMONIC = process.env.MNEMONIC || "";
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
 const ALCHEMY_KEY = process.env.ALCHEMY_KEY || "";
+const FORK_URL = process.env.FORK_URL || "";
+const FORK_BLOCK = Number(process.env.FORK_BLOCK) || 12345678
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -63,6 +65,10 @@ const config: HardhatUserConfig = {
     hardhat: {
       accounts: {
         mnemonic: MNEMONIC,
+      },
+      forking: {
+        url: FORK_URL,
+        blockNumber: FORK_BLOCK,
       },
       chainId: chainIds.hardhat,
     },
